@@ -106,7 +106,7 @@
                         </li>
                         <li>
                            <a href="#" class="sf-with-ul">
-                           Cetak Surat
+                           Surat Saya
                            </a>
                            
                         </li>
@@ -144,7 +144,7 @@
              <div class="fullwidthbanner rslider">
                  <ul>
                      <!-- THE FIRST SLIDE -->
-                     <li data-transition="fade" data-slotamount="7" data-masterspeed="500"  data-saveperformance="on">
+                     <li data-transition="fade" data-slotamount="5" data-masterspeed="500"  data-saveperformance="on">
                          <img src="<?php echo base_url('assets/img/slider/bandungx.jpg');?>"  alt="Pixma" data-lazyload="<?php echo base_url('assets/img/slider/bandung.jpg');?>" data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
 
                          <div class="caption modern_big_bluebg h1 lft tp-caption start"
@@ -193,7 +193,54 @@
                          
                      </li>
                      <!-- THE FIRST SLIDE -->
-                     
+                     <li data-transition="fade" data-slotamount="5" data-masterspeed="500"  data-saveperformance="on">
+                         <img src="<?php echo base_url('assets/img/slider/bandung2.jpg');?>"  alt="Pixma" data-lazyload="<?php echo base_url('assets/img/slider/bandung2.jpg');?>" data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
+
+                         <div class="caption modern_big_bluebg h1 lft tp-caption start"
+                              data-x="40"
+                              data-y="85"
+                              data-speed="700"
+                              data-endspeed="800"
+                              data-start="1000"
+                              data-easing="easeOutQuint"
+                              data-endeasing="easeOutQuint">
+                             <h3>KONFERENSI ASIA AFRIKA 2015</h3>
+                         </div>
+                         <div class="caption list_slide lfb tp-caption start"
+                              data-easing="easeOutExpo"
+                              data-start="1400"
+                              data-speed="1050"
+                              data-y="180"
+                              data-x="40">
+                             <div class="list-slide">
+                                 <i class="fa fa-camera slide-icon"></i>
+                                 <h5 class="dblue"> 60 Tahun</h5>
+                             </div>
+                         </div>
+                         <div class="caption list_slide lfb tp-caption start"
+                              data-easing="easeOutExpo"
+                              data-start="1800"
+                              data-speed="1200"
+                              data-y="220"
+                              data-x="40">
+                             <div class="list-slide">
+                                 <i class="fa fa-search slide-icon"></i>
+                                 <h5 class="dblue"> 60 Negara</h5>
+                             </div>
+                         </div>
+                         <div class="caption list_slide lfb tp-caption start"
+                              data-easing="easeOutExpo"
+                              data-start="2200"
+                              data-speed="1350"
+                              data-y="260"
+                              data-x="40">
+                             <div class="list-slide">
+                                 <i class="fa fa-code slide-icon"></i>
+                                 <h5 class="dblue"> Kota Penuh Dengan Seni</h5>
+                             </div>
+                         </div>
+                         
+                     </li>
                  </ul>
              </div>
          </div>

@@ -3,7 +3,7 @@
 class Modelsurat extends CI_Model {
 
 	public function ceklogin($data){
-		$d = $this->db->get_where('tbl_user',$data);	
+		$d = $this->db->get_where('tbl_user',$data);
 		return $d->num_rows();
 	}
 	public function insertsurat($data){

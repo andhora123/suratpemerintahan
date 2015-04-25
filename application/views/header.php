@@ -85,7 +85,7 @@
                   <nav class="collapse navbar-collapse menu">
                      <ul class="nav navbar-nav sf-menu">
                         <li>
-                           <a id="current" href="<?php echo site_url('utama/beranda');?>">
+                           <a href="<?php echo site_url('utama/beranda');?>">
                            Home
                            
                            </a>

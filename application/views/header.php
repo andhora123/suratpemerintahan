@@ -105,7 +105,7 @@
                            
                         </li>
                         <li>
-                           <a href="#" class="sf-with-ul">
+                           <a href="<?php echo site_url('utama/datasuratsaya');?>" class="sf-with-ul">
                            Surat Saya
                            </a>
                            

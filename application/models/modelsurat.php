@@ -10,7 +10,10 @@ class Modelsurat extends CI_Model {
 		return $this->db->insert('tbl_suratmasuk', $data); 
 		
 	}
-		public function insertsuratkeluar($data){
+	public function insertuser($data){
+		return $this->db->insert('tbl_user',$data);
+	}
+	public function insertsuratkeluar($data){
 		return $this->db->insert('tbl_suratkeluar', $data); 
 		
 	}
@@ -29,9 +32,26 @@ class Modelsurat extends CI_Model {
 		$query = $this->db->get('tbl_user');
 		return $query->result_array();
 	}
-	public function insertuser($data){
-		return $this->db->insert('tbl_user',$data);
+	
+	public function getallmysuratmasuk($id){
+		$d = $this->db->get_where('tbl_suratmasuk',$id);
+		return $d->result_array();
 	}
+	public function getallmysuratkeluar($id){
+		$d = $this->db->get_where('tbl_suratkeluar',$id);
+		return $d->result_array();
+	}
+
+	public function getmysuratmasuk($id){
+		$this->db->where('id_surat',$id);
+		$d = $this->db->get('tbl_suratmasuk');
+		return $d->row_array();
+	}
+	public function editsuratmasuk($id_surat,$data){
+		$this->db->where('id_surat',$id_surat);
+		return $this->db->update('tbl_suratmasuk',$data);
+	}
+
 }
 
 /* End of file welcome.php */

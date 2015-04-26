@@ -1,6 +1,7 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Utama extends CI_Controller {
+	public $tampung_id_surat = "";
 	public function index()
 	{
 
@@ -190,12 +191,76 @@ class Utama extends CI_Controller {
 					'di_tujukan'=>$this->input->post('tujukan'),
 					'file'=>$upload_data['file_name'],
 					'status'=>$this->input->post('status'),
-					'keterangan'=>$this->input->post('keterangan')
+					'keterangan'=>$this->input->post('keterangan'),
+					'pembuat' => $this->session->userdata('username')
 					);
 
 				$xx = $this->modelsurat->insertsurat($data);
 				if ($xx){
 					$this->beranda();
+				}
+			}
+		}
+	}
+	function datasuratsaya(){
+		$data['suratmasuk'] = $this->modelsurat->getallmysuratmasuk(array('pembuat' => $this->session->userdata('username')));
+		$data['suratkeluar'] = $this->modelsurat->getallmysuratkeluar(array('pembuat' => $this->session->userdata('username')));
+		$this->load->view('header');
+		$this->load->view('suratsaya',$data);
+		$this->load->view('footer');
+
+	}
+	public function editsuratmasuk($id_suratx){
+		$tampung_id_surat = $id_suratx;
+		$data['suratmasuk'] = $this->modelsurat->getmysuratmasuk($id_suratx);
+		$this->load->view('header');
+		$this->load->view('editsuratmasuk',$data);
+		$this->load->view('footer');
+	}
+	function editsuratmasuk_proses(){
+		$this->load->library('form_validation');
+		$this->form_validation->set_rules('nosurat', 'No Surat', 'trim|required|xss_clean');
+		$this->form_validation->set_rules('tanggal', 'Tanggal', 'trim|required|xss_clean');
+		$this->form_validation->set_rules('perihal', 'Perihal', 'trim|required|xss_clean');
+		$this->form_validation->set_rules('pengirim', 'Pengirim', 'trim|required|xss_clean');
+		$this->form_validation->set_rules('tujukan', 'Di Tujukan', 'trim|required|xss_clean');
+		$this->form_validation->set_rules('status', 'status surat', 'trim|required|xss_clean');
+		if ($this->form_validation->run() == FALSE) {
+		$this->editsuratmasuk();
+		}
+		else
+		{
+			$config['upload_path'] = './uploads/';
+			$config['allowed_types'] = 'jpeg|jpg|png|pdf|docx';
+			$config['max_size']	= '1000';
+
+			$this->load->library('upload', $config);
+
+			if ( ! $this->upload->do_upload('filefoto'))
+			{
+				echo $this->upload->display_errors('<p>','</p>');
+
+			}else{
+				$upload_data = $this->upload->data();
+
+				$data = array (
+					'no_surat'=>$this->input->post('nosurat'),
+					'tgl_surat'=>$this->input->post('tanggal'),
+					'perihal'=>$this->input->post('perihal'),
+					'pengirim'=>$this->input->post('pengirim'),
+					'di_tujukan'=>$this->input->post('tujukan'),
+					'file'=>$upload_data['file_name'],
+					'status'=>$this->input->post('status'),
+					'keterangan'=>$this->input->post('keterangan'),
+					'pembuat' => $this->session->userdata('username')
+					);
+
+				$xx = $this->modelsurat->editsuratmasuk($this->input->post('idsurat'),$data);
+				if ($xx){
+					$this->beranda();
+				}
+				else{
+					echo "Gagal Update";
 				}
 			}
 		}

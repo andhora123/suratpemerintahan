@@ -47,9 +47,18 @@ class Modelsurat extends CI_Model {
 		$d = $this->db->get('tbl_suratmasuk');
 		return $d->row_array();
 	}
+	public function getmysuratkeluar($id){
+		$this->db->where('id_surat',$id);
+		$d = $this->db->get('tbl_suratkeluar');
+		return $d->row_array();
+	}
 	public function editsuratmasuk($id_surat,$data){
 		$this->db->where('id_surat',$id_surat);
 		return $this->db->update('tbl_suratmasuk',$data);
+	}
+	public function editsuratkeluar($id_surat,$data){
+		$this->db->where('id_surat',$id_surat);
+		return $this->db->update('tbl_suratkeluar',$data);
 	}
 
 }

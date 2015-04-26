@@ -56,7 +56,7 @@
             <li><a href="#">Dashboard</a></li>
             <li><a href="#">Settings</a></li>
             <li><a href="#">Profile</a></li>
-            <li><a href="<?php echo site_url('utama/logout');?>">Logout</a></li>
+            <li><a href="<?php echo site_url('admin/logout');?>">Logout</a></li>
           </ul>
           <form class="navbar-form navbar-right">
             <input type="text" class="form-control" placeholder="Search...">

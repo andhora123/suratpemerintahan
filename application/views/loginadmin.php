@@ -6,7 +6,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-5 col-md-offset-3">
-				<form action="<?php echo site_url('utama/cekadmin');?>" method="post">
+				<form action="<?php echo site_url('admin/cekadmin');?>" method="post">
 					    <div class="form-group">
 			              <label for="username" class="col-sm-2 control-label">Username</label>
 			              <div class="col-sm-10">

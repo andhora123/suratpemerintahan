@@ -123,6 +123,18 @@ class Utama extends CI_Controller {
 		$this->db->delete('tbl_suratkeluar');
 		redirect('utama/admin');
 	}
+	function hapussuratmasuk($id)
+	{
+		$this->db->where('id_surat',$id);
+		$this->db->delete('tbl_suratmasuk');
+		redirect('utama/datasuratsaya');
+	}
+	function hapussuratkeluar($id)
+	{
+		$this->db->where('id_surat',$id);
+		$this->db->delete('tbl_suratkeluar');
+		redirect('utama/datasuratsaya');
+	}
 	function cekadmin(){
 		$this->load->library('form_validation');
 		$this->form_validation->set_rules('username', 'Username', 'trim|required|xss_clean');
@@ -231,7 +243,7 @@ class Utama extends CI_Controller {
 		else
 		{
 			$config['upload_path'] = './uploads/';
-			$config['allowed_types'] = 'jpeg|jpg|png|pdf|docx';
+			$config['allowed_types'] = 'jpeg|jpg|png|pdf|docx|';
 			$config['max_size']	= '1000';
 
 			$this->load->library('upload', $config);
@@ -257,7 +269,59 @@ class Utama extends CI_Controller {
 
 				$xx = $this->modelsurat->editsuratmasuk($this->input->post('idsurat'),$data);
 				if ($xx){
-					$this->beranda();
+					$this->editsuratmasuk();
+				}
+				else{
+					echo "Gagal Update";
+				}
+			}
+		}
+	}
+	public function editsuratkeluar($id_suratx){
+		$data['suratkeluar'] = $this->modelsurat->getmysuratkeluar($id_suratx);
+		$this->load->view('header');
+		$this->load->view('editsuratkeluar',$data);
+		$this->load->view('footer');
+	}
+	function editsuratkeluar_proses(){
+		$this->load->library('form_validation');
+		$this->form_validation->set_rules('nosurat', 'No Surat', 'trim|required|xss_clean');
+		$this->form_validation->set_rules('tanggal', 'Tanggal', 'trim|required|xss_clean');
+		$this->form_validation->set_rules('perihal', 'Perihal', 'trim|required|xss_clean');
+		$this->form_validation->set_rules('tujuan', 'Tujuan', 'trim|required|xss_clean');
+		$this->form_validation->set_rules('status', 'status surat', 'trim|required|xss_clean');
+		if ($this->form_validation->run() == FALSE) {
+		$this->editsuratmasuk();
+		}
+		else
+		{
+			$config['upload_path'] = './uploads/';
+			$config['allowed_types'] = 'jpeg|jpg|png|pdf|docx';
+			$config['max_size']	= '1000';
+
+			$this->load->library('upload', $config);
+
+			if ( ! $this->upload->do_upload('filefoto'))
+			{
+				echo $this->upload->display_errors('<p>','</p>');
+
+			}else{
+				$upload_data = $this->upload->data();
+
+				$data = array (
+					'no_surat'=>$this->input->post('nosurat'),
+					'tgl_surat'=>$this->input->post('tanggal'),
+					'perihal'=>$this->input->post('perihal'),
+					'tujuan'=>$this->input->post('tujuan'),
+					'file'=>$upload_data['file_name'],
+					'status'=>$this->input->post('status'),
+					'keterangan'=>$this->input->post('keterangan'),
+					'pembuat' => $this->session->userdata('username')
+					);
+
+				$xx = $this->modelsurat->editsuratkeluar($this->input->post('idsurat'),$data);
+				if ($xx){
+					$this->editsuratkeluar();
 				}
 				else{
 					echo "Gagal Update";

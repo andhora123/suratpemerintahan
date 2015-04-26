@@ -5,6 +5,9 @@
   $(function() {
     $( "#datepicker" ).datepicker();
   });
+  function kosong(){
+    alert('File Tidak Ada');
+  }
   </script>
 <div class="container">
   <h3 class="title" style="margin-top:60px;">SURAT MASUK</h3>
@@ -39,7 +42,18 @@
           <div class="form-group">
             <label for="exampleInputFile">File input Baru : </label>
             <input type="file" id="exampleInputFile" name="filefoto">
-            <p>File Dahulu : </p><img src="<?php echo base_url('uploads/'.$suratmasuk['file']);?>" width="100" height="100">
+            <?php 
+                  if ($suratmasuk['file'] == null){
+                    ?>
+                   <p>File Dahulu : </p><a onclick="kosong()" class="btn btn-sm btn-warning">Lihat</a>
+                    <?php
+                  }
+                  else{
+                    ?>
+                    <p>File Dahulu : </p><a href="<?php echo base_url('uploads/'.$suratmasuk['file']); ?>" target="_blank" class="btn btn-sm btn-warning">Lihat</a>  
+                    <?php
+                  }
+                ?>
           </div>
           <div class="form-group">
             <label for="status">Status :</label>

@@ -35,8 +35,8 @@
                 <td><?php echo $key['status']; ?></td>
                 <td><?php echo $key['keterangan']; ?></td>
                 <td ><a href="<?php echo base_url('uploads/'.$key['file']); ?>" target="_blank" class="btn btn-sm btn-danger">Lihat</a></td>
-                <td><a href="<?php echo site_url('utama/editsuratmasuk/'.$key['id_surat']); ?>" class="btn btn-sm btn-warning">Edit</a></td>
-                <td><a  onclick="return confirm('Hapus Data Ini ?');" href="<?php echo site_url('utama/hapussuratmasuk/'.$key['id_surat']); ?>" class="btn btn-sm btn-info">Hapus</a></td>
+                <td><a href="<?php echo site_url('surat/editsuratmasuk/'.$key['id_surat']); ?>" class="btn btn-sm btn-warning">Edit</a></td>
+                <td><a  onclick="return confirm('Hapus Data Ini ?');" href="<?php echo site_url('surat/hapussuratmasuk/'.$key['id_surat']); ?>" class="btn btn-sm btn-info">Hapus</a></td>
               </tr>
               <?php
               }
@@ -81,8 +81,8 @@
                 <td><?php echo $key2['status']; ?></td>
                 <td><?php echo $key2['keterangan']; ?></td>
                 <td><a href="<?php echo base_url('uploads/'.$key2['file']); ?>" target="_blank" class="btn btn-sm btn-success">Lihat</a></td>
-                <td><a href="<?php echo site_url('utama/editsuratkeluar/'.$key2['id_surat']); ?>" class="btn btn-sm btn-primary">Edit</a></td>
-                <td><a onclick="return confirm('Hapus Data Ini ?');" href="<?php echo site_url('utama/hapussuratkeluar/'.$key2['id_surat']); ?>" class="btn btn-sm btn-info">Hapus</a></td>
+                <td><a href="<?php echo site_url('surat/editsuratkeluar/'.$key2['id_surat']); ?>" class="btn btn-sm btn-primary">Edit</a></td>
+                <td><a onclick="return confirm('Hapus Data Ini ?');" href="<?php echo site_url('surat/hapussuratkeluar/'.$key2['id_surat']); ?>" class="btn btn-sm btn-info">Hapus</a></td>
               </tr>
               <?php
               }

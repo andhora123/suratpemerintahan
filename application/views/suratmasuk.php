@@ -26,7 +26,7 @@ if ((validation_errors())){
 
 	<div class="row">
 		<div class="col-md-6 col-md-offset-3">
-			<form action="<?php echo site_url('utama/insertsuratmasuk');?>" method="post"  enctype="multipart/form-data">
+			<form action="<?php echo site_url('surat/insertsuratmasuk');?>" method="post"  enctype="multipart/form-data">
 				  <div class="form-group">
 				    <label for="nosurat">No Surat :</label>
 				    <input type="text" class="form-control" id="nosurat" name="nosurat" placeholder="No Surat">

@@ -14,7 +14,7 @@
 
   <div class="row">
     <div class="col-md-6 col-md-offset-3">
-      <form action="<?php echo site_url('utama/editsuratmasuk_proses');?>" method="post"  enctype="multipart/form-data">
+      <form action="<?php echo site_url('surat/editsuratmasuk_proses');?>" method="post"  enctype="multipart/form-data">
           <div class="form-group">
             <label for="idsurat">ID Surat :</label>
             <input type="text" class="form-control" id="idsurat" name="idsurat" placeholder="No Surat" value="<?php echo $suratmasuk['id_surat'];?>" readonly>

@@ -69,11 +69,10 @@
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
-            <li><a href="<?php echo site_url('utama/admin');?>">Dashboard</a></li>
-            <li class="active"><a href="<?php echo site_url('utama/datauser');?>">Data User <span class="sr-only">(current)</span></a></li>
-            <li><a href="<?php echo site_url('utama/datasuratmasuk');?>">Data Surat Masuk</a></li>
-            <li><a href="<?php echo site_url('utama/datasuratkeluar');?>">Data Surat Keluar</a></li>
-            <li><a href="#">Data Berkas</a></li>
+            <li><a href="<?php echo site_url('admin/');?>">Dashboard <span class="sr-only">(current)</span></a></li>
+            <li  class="active"><a href="<?php echo site_url('admin/datauser');?>">Data User</a></li>
+            <li><a href="<?php echo site_url('admin/datasuratmasuk');?>">Data Surat Masuk</a></li>
+            <li><a href="<?php echo site_url('admin/datasuratkeluar');?>">Data Surat Keluar</a></li>
           </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
@@ -104,7 +103,7 @@
                 <td><?php echo $key['username']; ?></td>
                 <td><?php echo $key['email']; ?></td>
                 <td><a href="<?php echo site_url('programmer/edit/'.$key['id_user']); ?>" class="btn btn-info">Edit</a>
-                    <a onclick="return confirm('Hapus Data Ini ?');" href="<?php echo site_url('utama/deleteuser/'.$key['id_user']); ?>" class="btn btn-warning">Delete</a>
+                    <a onclick="return confirm('Hapus Data Ini ?');" href="<?php echo site_url('admin/deleteuser/'.$key['id_user']); ?>" class="btn btn-warning">Delete</a>
                 </td>
               </tr>
               <?php

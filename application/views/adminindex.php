@@ -69,18 +69,17 @@
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
-            <li class="active"><a href="<?php echo site_url('utama/admin');?>">Dashboard <span class="sr-only">(current)</span></a></li>
-            <li><a href="<?php echo site_url('utama/datauser');?>">Data User</a></li>
-            <li><a href="<?php echo site_url('utama/datasuratmasuk');?>">Data Surat Masuk</a></li>
-            <li><a href="<?php echo site_url('utama/datasuratkeluar');?>">Data Surat Keluar</a></li>
-            <li><a href="#">Data Berkas</a></li>
+            <li class="active"><a href="<?php echo site_url('admin/');?>">Dashboard <span class="sr-only">(current)</span></a></li>
+            <li><a href="<?php echo site_url('admin/datauser');?>">Data User</a></li>
+            <li><a href="<?php echo site_url('admin/datasuratmasuk');?>">Data Surat Masuk</a></li>
+            <li><a href="<?php echo site_url('admin/datasuratkeluar');?>">Data Surat Keluar</a></li>
           </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           <h1 class="page-header">Data User</h1>
           <div class="row">
             <div class="col-md-12">
-              <a href="<?php echo site_url('utama/add_user'); ?>" class="btn btn-primary">Input User</a>
+              <a href="<?php echo site_url('admin/add_user'); ?>" class="btn btn-primary">Input User</a>
             </div>
           </div>
           <table class="table table-hover">
@@ -104,7 +103,7 @@
                 <td><?php echo $key['username']; ?></td>
                 <td><?php echo $key['email']; ?></td>
                 <td><a href="<?php echo site_url('utama/edituser/'.$key['id_user']); ?>" class="btn btn-info">Edit</a>
-                    <a onclick="return confirm('Hapus Data Ini ?');" href="<?php echo site_url('utama/deleteuser/'.$key['id_user']); ?>" class="btn btn-warning">Delete</a>
+                    <a onclick="return confirm('Hapus Data Ini ?');" href="<?php echo site_url('admin/deleteuser/'.$key['id_user']); ?>" class="btn btn-warning">Delete</a>
                 </td>
               </tr>
               <?php
@@ -150,7 +149,6 @@
                 <td><?php echo $key['status']; ?></td>
                 <td><?php echo $key['keterangan']; ?></td>
                 <td><a href="<?php echo base_url('uploads/'.$key['file']); ?>" target="_blank" class="btn btn-sm btn-danger">Lihat</a></td>
-                <td><a href="<?php echo site_url('programmer/edit/'.$key['id_surat']); ?>" class="btn btn-sm btn-info">Edit</a></td>
                 <td><a onclick="return confirm('Hapus Data Ini ?');" href="<?php echo site_url('utama/deletesuratmasuk/'.$key['id_surat']); ?>" class="btn btn-sm btn-warning">Delete</a>
                 </td>
                 
@@ -198,7 +196,7 @@
                 <td><?php echo $key2['status']; ?></td>
                 <td><?php echo $key2['keterangan']; ?></td>
                 <td colspan="3"><a href="<?php echo base_url('uploads/'.$key2['file']); ?>" target="_blank" class="btn btn-sm btn-success">Lihat</a></td>
-                <td><a href="<?php echo site_url('programmer/edit/'.$key2['id_surat']); ?>" class="btn btn-sm btn-info">Edit</a></td>
+                
                 <td><a onclick="return confirm('Hapus Data Ini ?');" href="<?php echo site_url('utama/deletesuratkeluar/'.$key2['id_surat']); ?>" class="btn btn-sm btn-warning">Delete</a>
                 </td>
                 

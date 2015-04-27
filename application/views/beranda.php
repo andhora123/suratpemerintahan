@@ -1,3 +1,11 @@
+<?php
+
+     if (!($this->session->userdata('username'))){
+    redirect('user');
+    }
+
+
+?>
 <script type="text/javascript">
   function kosong(){
     alert('File Tidak Ada');

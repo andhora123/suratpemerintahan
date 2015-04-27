@@ -2,7 +2,7 @@
   if (!($this->session->userdata('username'))){
     
   }else{
-     redirect('utama/beranda');                            
+     redirect('surat/beranda');                            
   }
 ?>
 <head>
@@ -52,7 +52,7 @@
 
                             <div class="space-sep30"></div>
 
-                        <form id="loginform" class="form-horizontal" role="form" action="<?php echo site_url('utama/verifikasi');?>" method="post" >
+                        <form id="loginform" class="form-horizontal" role="form" action="<?php echo site_url('user/verifikasi');?>" method="post" >
                                     
                            			 <div style="margin-bottom: 25px" class="input-group">
                                         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>

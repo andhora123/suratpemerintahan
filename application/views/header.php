@@ -85,27 +85,27 @@
                   <nav class="collapse navbar-collapse menu">
                      <ul class="nav navbar-nav sf-menu">
                         <li>
-                           <a href="<?php echo site_url('utama/beranda');?>">
+                           <a href="<?php echo site_url('surat/beranda');?>">
                            Home
                            
                            </a>
                           
                         </li>
                         <li>
-                           <a href="<?php echo site_url('utama/suratmasuk');?>" class="sf-with-ul">
+                           <a href="<?php echo site_url('surat/suratmasuk');?>" class="sf-with-ul">
                            Surat Masuk
                            </a>
                          
                         </li>
                         <li>
-                           <a href="<?php echo site_url('utama/suratkeluar');?>" class="sf-with-ul">
+                           <a href="<?php echo site_url('surat/suratkeluar');?>" class="sf-with-ul">
                            Surat Keluar
                            
                            </a>
                            
                         </li>
                         <li>
-                           <a href="<?php echo site_url('utama/datasuratsaya');?>" class="sf-with-ul">
+                           <a href="<?php echo site_url('surat/datasuratsaya');?>" class="sf-with-ul">
                            Surat Saya
                            </a>
                            
@@ -115,7 +115,7 @@
                             <i class="fa fa-user"></i>
                             <?php 
                               if (!($this->session->userdata('username'))){
-                                 redirect('utama');
+                                 redirect('surat');
                               }else{
                                  echo $this->session->userdata('username');
                               }
@@ -125,7 +125,7 @@
                             </span>
                             </a>
                             <ul>
-                              <li><a href="<?php echo site_url('utama/logout');?>" class="sf-with-ul">Logout</a></li>
+                              <li><a href="<?php echo site_url('user/logout');?>" class="sf-with-ul">Logout</a></li>
                             </ul>
                          </li>
                      </ul>

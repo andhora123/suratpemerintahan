@@ -68,7 +68,7 @@
         </div>        
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           <h1 class="page-header">Input User</h1>
-          <form class="form-horizontal" method="POST" action="<?php echo site_url('utama/add_proses'); ?>" enctype="multipart/form-data">
+          <form class="form-horizontal" method="POST" action="<?php echo site_url('admin/add_proses'); ?>" enctype="multipart/form-data">
             <div class="form-group">
               <label for="username" class="col-sm-2 control-label">Username</label>
               <div class="col-sm-10">

@@ -30,7 +30,7 @@ if ((validation_errors())){
 
 	<div class="row">
 		<div class="col-md-6 col-md-offset-3">
-			<form action="<?php echo site_url('utama/insertsuratkeluar');?>" method="post"  enctype="multipart/form-data">
+			<form action="<?php echo site_url('surat/editsuratkeluar_proses');?>" method="post"  enctype="multipart/form-data">
 				  <div class="form-group">
 				    <label for="idsurat">ID Surat :</label>
 				    <input type="text" class="form-control" id="idsurat" name="idsurat" value="<?php echo $suratkeluar['id_surat'];?>" readonly>

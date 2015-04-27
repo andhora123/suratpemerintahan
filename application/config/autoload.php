@@ -109,7 +109,7 @@ $autoload['language'] = array();
 |
 */
 
-$autoload['model'] = array('modelsurat');
+$autoload['model'] = array('modelsurat','m_user');
 
 
 /* End of file autoload.php */
